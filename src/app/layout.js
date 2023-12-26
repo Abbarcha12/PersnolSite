@@ -1,7 +1,14 @@
-import { Inter } from 'next/font/google'
+import { Roboto } from 'next/font/google'
+import { Adamina } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/Header/Header'
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto = Adamina({
+  weight: '400',
+  subsets: ['latin'],
+})
+ 
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +18,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={roboto.className}>
+        <Header/>
+        {children}
+
+        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+        </body>
     </html>
   )
 }
